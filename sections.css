@@ -1,0 +1,89 @@
+/* Credential cards and contact layout. */
+.credentials-section{background:#fbfaf7;border-top:1px solid var(--line)}
+.credentials-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:36px}
+.credentials-heading .eyebrow{margin-bottom:18px}
+.credentials-heading h2{font-size:clamp(34px,3.6vw,48px);line-height:1.15;letter-spacing:-1.7px}
+.credentials-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;padding-bottom:3px;font-size:12px;font-weight:550;color:var(--accent);white-space:nowrap}
+.credentials-link .icon{width:16px;height:16px}
+.credentials-link:hover{text-decoration:underline;text-underline-offset:5px}
+.credentials-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.credential-card{display:flex;flex-direction:column;min-width:0;min-height:310px;padding:28px;background:#fff;border:1px solid #dedfd6;border-radius:12px;transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+a.credential-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 12px 26px #25282008}
+.credential-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.credential-badge{display:inline-flex;align-items:center;justify-content:center;width:49px;height:49px;border:1.5px solid var(--accent);border-radius:50%;font-size:12px;font-weight:600;color:var(--accent);flex-shrink:0}
+.credential-status{display:inline-flex;align-items:center;gap:6px;font-size:8px;letter-spacing:.8px;color:var(--muted);text-align:right;line-height:1.6}
+.credential-card h3{font-size:21px;line-height:1.3;font-weight:550;letter-spacing:-.4px;margin-bottom:15px;text-wrap:pretty}
+.credential-card>p{font-size:13px;line-height:1.8;color:var(--muted);margin-bottom:24px}
+.credential-action{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e5e5de;padding-top:18px;margin-top:auto;font-size:12px;font-weight:500;color:var(--accent)}
+.credential-action .icon{width:16px;height:16px;transition:transform .2s}
+a.credential-card:hover .credential-action .icon{transform:translate(2px,-2px)}
+.credential-current{background:#f7f8f2}
+.credential-current .credential-badge{border-color:#67775c;color:#526746}
+.credential-current .status-dot{background:#647a53}
+.credential-current-note{margin-top:auto;border-top:1px solid #e0e4d7;padding-top:18px;color:#647058;font-size:12px;line-height:1.5}
+.contact-refresh{background:#0d202d;color:#f8faf8}
+.contact-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;padding-block:64px}
+.contact-message{align-self:center;padding-block:8px}
+.contact-message>.eyebrow{font-size:10px;letter-spacing:1.6px;color:#e1b797;margin-bottom:22px}
+.contact-message h2{font-size:clamp(36px,4vw,54px);font-weight:550;line-height:1.13;letter-spacing:-1.8px;margin-bottom:24px}
+.contact-message h2 em{color:#e7bb9a}
+.contact-description{font-size:15px;line-height:1.85;color:#bfd0d9;max-width:480px;margin-bottom:27px}
+.cv-request{border:1px solid #8196a1;color:#f5f8fa;min-width:153px;background:transparent;border-radius:5px;font-size:12px}
+.cv-request:hover{background:#213744;border-color:#b5c8d2}
+.contact-location{font-size:11px;color:#a1b6c2;margin-top:24px}
+.contact-card-list{display:flex;flex-direction:column;gap:12px}
+.contact-card{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:87px;border:1px solid #314652;border-radius:9px;background:#1b303e;padding:19px 23px;transition:background .2s,border-color .2s,transform .2s}
+.contact-card:hover{background:#263e4d;border-color:#7c929d;transform:translateX(3px)}
+.contact-card-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+.contact-card-label{font-size:9px;letter-spacing:1.1px;color:#a5c7d8}
+.contact-card strong{font-size:14px;font-weight:550;line-height:1.4;overflow-wrap:anywhere}
+.contact-card>.icon{width:18px;height:18px;color:#a3bac7}
+.contact-refresh a:focus-visible{outline-color:#edc6a8}
+
+/* Full-resolution viewer, limited to the source image's native resolution. */
+.credential-viewer{width:min(1200px,calc(100% - 36px));height:calc(100dvh - 36px);max-width:none;max-height:calc(100dvh - 36px);margin:auto;padding:0;border:1px solid #dadecf;border-radius:12px;background:#fbfaf7;overflow:hidden}
+.credential-viewer[open]{display:flex;flex-direction:column}
+.credential-viewer [hidden]{display:none!important}
+.credential-viewer::backdrop{background:#08121cba;backdrop-filter:blur(5px)}
+.viewer-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:21px 27px;border-bottom:1px solid #dedfd6;flex-shrink:0}
+.viewer-heading .eyebrow{font-size:8px;letter-spacing:1.4px;color:var(--accent);margin-bottom:7px}
+.viewer-heading h2{font-size:23px;letter-spacing:-.5px;font-weight:550;line-height:1.3}
+#viewer-description{font-size:12px;line-height:1.5;color:var(--muted);margin-top:6px}
+.viewer-close{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid #c9cdbf;border-radius:50%;flex-shrink:0}
+.viewer-close .icon{width:18px;height:18px}
+.viewer-close:hover{background:var(--sage)}
+.viewer-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:10px 25px;border-bottom:1px solid #cbd1c6;flex-shrink:0}
+.viewer-zoom-controls{display:flex;align-items:center;gap:6px}
+.viewer-zoom-controls button{min-width:44px;min-height:44px;border:1px solid #c9cdbf;border-radius:5px;padding:8px;font-size:20px;line-height:1}
+.viewer-zoom-controls button.viewer-fit{font-size:12px;padding-inline:15px}
+.viewer-zoom-controls button:hover:not(:disabled){background:var(--sage)}
+.viewer-zoom-controls button:disabled{opacity:.35;cursor:not-allowed}
+.viewer-zoom-level{font-size:11px;min-width:45px;margin-left:7px;color:var(--muted)}
+.viewer-file-actions{display:flex;align-items:center;gap:22px}
+.viewer-file-actions a{display:flex;align-items:center;gap:10px;min-height:44px;font-size:12px;font-weight:500}
+.viewer-file-actions .icon{width:15px;height:15px}
+.viewer-file-actions a:hover{color:var(--accent)}
+.viewer-stage{position:relative;flex:1;min-height:0;overflow:auto;padding:22px;background:#dde2dd;overscroll-behavior:contain;scroll-behavior:auto}
+.viewer-canvas{position:relative;margin:auto;background:white;box-shadow:0 3px 16px #14241e18;line-height:0}
+#credential-image{display:block;width:100%;height:auto;max-width:none;user-select:none;-webkit-user-drag:none}
+.viewer-stage.is-zoomed{cursor:grab}
+.viewer-stage.is-dragging{cursor:grabbing;user-select:none}
+.viewer-stage:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.viewer-loading,.viewer-error{position:absolute;left:20px;right:20px;top:35%;font-size:14px;text-align:center;color:#455348}
+.viewer-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 25px;border-top:1px solid #d4d9cc;font-size:10px;line-height:1.4;color:var(--muted);flex-shrink:0}
+.viewer-bottom span:last-child{text-align:right}
+.motion-off .credential-card,.motion-off .contact-card{transition:none}
+@media(max-width:1100px){.contact-layout{gap:55px}.credential-card{padding:23px}.credential-topline{gap:8px}.credential-status{font-size:7px;letter-spacing:.5px}.credential-card h3{font-size:19px}.credential-card>p{font-size:12px}.credential-action{font-size:11px}.contact-message h2{font-size:43px}}
+@media(max-width:800px){.credentials-heading{align-items:start}.credentials-heading h2{font-size:36px}.credentials-link{font-size:10px}.credentials-grid{gap:14px}.credential-card{padding:21px 18px;min-height:315px}.credential-topline{align-items:start;flex-direction:column;gap:12px;margin-bottom:19px}.credential-status{text-align:left;font-size:8px}.credential-card h3{font-size:18px}.credential-card>p{font-size:12px}.credential-action{font-size:10px;line-height:1.5}.contact-layout{gap:35px;padding-block:52px}.contact-message h2{font-size:36px}.contact-description{font-size:13px}.contact-card{padding:18px;min-height:88px}.contact-card strong{font-size:13px}}
+@media(max-width:600px){.credentials-heading{flex-direction:column;gap:13px;margin-bottom:25px}.credentials-heading h2{font-size:34px;letter-spacing:-1.3px}.credentials-heading .eyebrow{margin-bottom:15px}.credentials-link{font-size:12px}.credentials-grid{grid-template-columns:1fr;gap:17px}.credential-card{min-height:270px;padding:25px}.credential-topline{align-items:center;flex-direction:row;margin-bottom:22px}.credential-status{font-size:8px;letter-spacing:.6px}.credential-card h3{font-size:23px}.credential-card>p{font-size:14px;line-height:1.7;margin-bottom:22px}.credential-action,.credential-current-note{font-size:12px;padding-top:17px}.contact-layout{grid-template-columns:1fr;gap:32px;padding-block:46px}.contact-message{padding:0}.contact-message h2{font-size:39px;letter-spacing:-1.4px}.contact-message>.eyebrow{font-size:9px;margin-bottom:20px}.contact-description{font-size:14px;margin-bottom:23px}.cv-request{font-size:12px}.contact-location{font-size:11px;margin-top:20px}.contact-card{min-height:86px;padding:18px 21px}.contact-card strong{font-size:15px}.credential-viewer{width:calc(100% - 12px);height:calc(100dvh - 12px);max-height:calc(100dvh - 12px);border-radius:9px}.viewer-heading{padding:17px 16px;gap:12px}.viewer-heading h2{font-size:19px;line-height:1.3}.viewer-heading .eyebrow{font-size:7px;letter-spacing:1px}.viewer-heading #viewer-description{font-size:11px}.viewer-toolbar{padding:8px 12px;gap:7px;flex-wrap:wrap}.viewer-zoom-controls{gap:5px}.viewer-zoom-controls button{min-width:44px;min-height:44px}.viewer-zoom-controls button.viewer-fit{padding-inline:12px}.viewer-zoom-level{font-size:10px;margin-left:4px;min-width:34px}.viewer-file-actions{gap:17px;margin-left:auto}.viewer-file-actions a{font-size:10px;gap:5px;min-height:44px}.viewer-file-actions .icon{width:13px;height:13px}.viewer-stage{padding:12px}.viewer-bottom{padding:10px 14px;font-size:8px;gap:12px}.viewer-bottom span:last-child{max-width:130px}}
+@media(max-width:380px){.credentials-heading h2{font-size:30px}.credential-card h3{font-size:21px}.contact-message h2{font-size:35px}.viewer-file-actions{margin-left:0;width:100%;justify-content:flex-end}.viewer-heading h2{font-size:18px}.viewer-heading #viewer-description{font-size:10px}}
+@media print{.credentials-section{background:white}.credential-card{break-inside:avoid;box-shadow:none}.contact-refresh{background:white;color:black}.contact-description,.contact-location,.contact-card-label{color:#333}.contact-card{background:white;border-color:#ccc;color:black}.credential-viewer{display:none!important}}
+.credentials-link,.credential-action{color:var(--cta-green)}
+.credentials-link:hover,.credential-action:hover{color:var(--cta-green-hover)}
+.viewer-file-actions a:hover{color:var(--cta-green-hover)}
+a.credential-card:hover{border-color:var(--cta-green)}
+.contact-message .cv-request{background:var(--cta-green);border-color:var(--cta-green);color:#fff}
+.contact-message .cv-request:hover{background:var(--cta-green-hover);border-color:var(--cta-green-hover);color:#fff}
+.contact-card:hover{background:#203c32;border-color:var(--cta-green-on-dark)}
+.contact-card:hover strong,.contact-card:hover>.icon,.contact-card[href*="linkedin"] strong,.contact-card[href*="linkedin"]>.icon{color:var(--cta-green-on-dark)}
+.contact-refresh a:focus-visible{outline-color:var(--cta-green-on-dark)}
